@@ -1,32 +1,15 @@
 import React, { Fragment } from 'react';
-import { connect } from 'react-redux';
-import Header from './Header';
-import Main from './Main';
-import { setProgram, choice } from '../redux/actions';
+import { Route } from 'react-router-dom';
 
-const App = (props) => {
-  // console.log(props);
-  return (
-    <Fragment>
-      <Header />
-      <Main
-        program={props.program}
-        setProgram={props.setProgram}
-        choiceParams={props.choice}
-        params={props.data}
-      />
-    </Fragment>
-  );
-};
+import Page1 from './Page1';
+import Page2 from './Page2';
+import Page3 from './Page3';
 
-const mapStateToProps = state => ({
-  program: state.setProgram,
-  data: state.choice,
-});
+export default () => (
+  <Fragment>
+    <Route exact path="/" component={Page1} />
+    <Route exact path="/Page2" component={Page2} />
+    <Route exact path="/Page3" component={Page3} />
+  </Fragment>
+);
 
-const mapDispatchToProps = {
-  setProgram,
-  choice,
-};
-
-export default (connect(mapStateToProps, mapDispatchToProps)(App));

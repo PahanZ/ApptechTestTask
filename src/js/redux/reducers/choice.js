@@ -1,11 +1,6 @@
-import choiceParams from '../constants';
+import { choiceParams } from '../constants';
 
-const obj = {
-  summ: '0',
-  term: '0',
-};
-
-export default (state = obj, action) => {
+export default (state = {}, action) => {
   if (action.type === choiceParams) {
     return {
       ...state,

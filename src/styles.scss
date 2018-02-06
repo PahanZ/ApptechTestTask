@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 #app {
     margin: 1%;
@@ -12,7 +13,6 @@
         grid-auto-flow: column;
         list-style-type: none;
         background-color: #c6c6c6;
-        font-family: sans-serif;
         .item {
             color: #fff;
             display: grid;
@@ -64,6 +64,11 @@
                 background-color:#0ed1d7;
                 color: #fff;
                 cursor: pointer;
+                text-decoration: none;
+                display: grid;
+                justify-content: center;
+                align-content: center;
+                font-size: x-large;
             }
         }
         .content {

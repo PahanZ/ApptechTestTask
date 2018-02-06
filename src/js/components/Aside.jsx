@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default (props) => {
   console.log(props);
@@ -30,17 +31,17 @@ export default (props) => {
         max={max()}
         placeholder="Срок займа, мес"
       />
-      <button
+      <Link
+        to="/Page2"
         onClick={(event) => {
-        event.preventDefault();
-          console.log(document.querySelectorAll('input.options')[0].value);
-          console.log(document.querySelectorAll('input.options')[1].value);
-          props.choiceParams(document.querySelectorAll('input.options')[0].value, document.querySelectorAll('input.options')[1].value);
-          console.log(props);
-      }}
+          //event.preventDefault();
+          const inputs = document.querySelectorAll('input.options');
+          props.choiceParams(inputs[0].value, inputs[1].value);
+        }}
         className="options optionsBtn"
+        props={props}
       >Далее
-      </button>
+      </Link>
     </aside>
   );
 };
