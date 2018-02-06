@@ -1,3 +1,5 @@
+
+
 * {
     margin: 0;
     padding: 0;
@@ -39,28 +41,18 @@
     .main {
         display: grid;
         grid-auto-flow: column;
-        grid-template-columns: 2fr 3fr;
-        .aside{
-            display: grid;
-            justify-items: start;
-            grid-gap: 25px;
-            .options {
+        grid-template-columns: 1.55fr 3fr;
+        .options {
                 height: 10vh;
                 width: 65%;
                 border: none;
                 background-color: #ddd;
                 padding: 0 10px;
                 font-size: large;
-                border-radius: 10px; 
+                border-radius: 10px;
+                margin: 15px; 
             }
-            .options::-webkit-outer-spin-button,
-            .options::-webkit-inner-spin-button {
-                -webkit-appearance: none;
-            }
-            .options[type='number'] {
-                -moz-appearance: textfield;
-            }
-            .optionsBtn {
+        .optionsBtn {
                 background-color:#0ed1d7;
                 color: #fff;
                 cursor: pointer;
@@ -69,6 +61,25 @@
                 justify-content: center;
                 align-content: center;
                 font-size: x-large;
+        }
+        .aside {
+            padding: 15px;
+            color: grey;
+            .options::-webkit-outer-spin-button,
+            .options::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+            }
+            .options[type='number'] {
+                -moz-appearance: textfield;
+            }
+        }
+        .asidePage2 {
+            background-color: #c7c7c7;
+            h2 {
+                font-size: 35px;
+            }
+            div:nth-child(2) {
+                margin: 10px 0;
             }
         }
         .content {

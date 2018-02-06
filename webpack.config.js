@@ -16,6 +16,9 @@ const development = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   module: {
     rules: [
       {

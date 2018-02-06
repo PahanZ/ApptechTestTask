@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default (props) => {
-  console.log(props);
   const max = () => {
     if (props.program === 'Авто') {
       return '60';
@@ -33,8 +32,7 @@ export default (props) => {
       />
       <Link
         to="/Page2"
-        onClick={(event) => {
-          //event.preventDefault();
+        onClick={() => {
           const inputs = document.querySelectorAll('input.options');
           props.choiceParams(inputs[0].value, inputs[1].value);
         }}
