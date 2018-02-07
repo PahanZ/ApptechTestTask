@@ -1,18 +1,24 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import Header from './Header';
+import Main from './Main';
 
-const Page3 = () => (
-  <Fragment>
-    <Header />
-    <Link to="/" > Page1</Link >
-  </Fragment>
-);
+const Page3 = (props) => {
+  // console.log(props);
+  return (
+    <Fragment>
+      <Header />
+      <Main
+        program={props.program}
+        data={props.data}
+      />
+    </Fragment>
+  );
+};
 
 const mapStateToProps = state => ({
   program: state.setProgram,
-  data: state.choice,
+  data: state.choiceParams,
 });
 
 

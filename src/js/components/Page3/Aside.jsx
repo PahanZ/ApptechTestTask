@@ -1,8 +1,15 @@
 import React from 'react';
 import correctProgram from '../../additions/correctProgram';
+import data from '../../additions/dataForAside3';
 
 export default (props) => {
-  // console.log(props.program);
+  // console.log(props);
+  const section = data.h3.map((element, i) => (
+    <section key={String(i)}>
+      <h3>{element}</h3>
+      <h4>{data.h4}</h4>
+    </section>
+  ));
   return (
     <aside className="aside asidePage2">
       <section>
@@ -16,8 +23,18 @@ export default (props) => {
       </section>
       <section>
         <h2>Выбранная стратегия</h2>
-        <h3>Первоначальный взнос - <span className="strategy">{props.firstInstallment}</span> руб.</h3>
-        <h3>Ежемесячный взнос - <span className="strategy">{props.monthlyInstallment}</span> руб.</h3>
+        <h3>Первоначальный взнос -
+          <span className="strategy"> {props.data.firstInstallment} </span>
+           руб.
+        </h3>
+        <h3>Ежемесячный взнос -
+          <span className="strategy"> {props.data.monthlyInstallment} </span>
+           руб.
+        </h3>
+      </section>
+      <section>
+        <h2>Расходы заемщика</h2>
+        {section}
       </section>
     </aside>
   );

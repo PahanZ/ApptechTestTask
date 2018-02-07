@@ -5,7 +5,7 @@ const setProgram = data => (dispatch) => {
   });
 };
 
-const choice = (summ, term) => (dispatch) => {
+const choiceParams = (summ, term) => (dispatch) => {
   dispatch({
     type: 'choiceParams',
     payload: summ,
@@ -13,4 +13,26 @@ const choice = (summ, term) => (dispatch) => {
   });
 };
 
-export { setProgram, choice };
+const setFirstInstallment = data => (dispatch) => {
+  dispatch({
+    type: 'setFirstInstallment',
+    payload: data,
+  });
+};
+
+const setMonthlyInstallment = data => (dispatch) => {
+  dispatch({
+    type: 'setMonthlyInstallment',
+    payload: data,
+  });
+};
+
+const choiceStrategy = (firstInstallment, monthlyInstallment) => (dispatch) => {
+  dispatch({
+    type: 'choiceStrategy',
+    payload: firstInstallment,
+    payload2: monthlyInstallment,
+  });
+};
+
+export { setProgram, choiceParams, setFirstInstallment, setMonthlyInstallment, choiceStrategy };

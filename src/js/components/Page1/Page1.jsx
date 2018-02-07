@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import Header from './Header';
 import Main from './Main';
-import { setProgram, choice } from '../../redux/actions';
+import { setProgram, choiceParams } from '../../redux/actions';
 
 const Page1 = props => (
   <Fragment>
@@ -10,7 +10,7 @@ const Page1 = props => (
     <Main
       program={props.program}
       setProgram={props.setProgram}
-      choiceParams={props.choice}
+      choiceParams={props.choiceParams}
       params={props.data}
     />
   </Fragment>
@@ -18,12 +18,12 @@ const Page1 = props => (
 
 const mapStateToProps = state => ({
   program: state.setProgram,
-  data: state.choice,
+  data: state.choiceParams,
 });
 
 const mapDispatchToProps = {
   setProgram,
-  choice,
+  choiceParams,
 };
 
 export default (connect(mapStateToProps, mapDispatchToProps)(Page1));

@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 import setProgram from './setProgram';
-import choice from './choice';
+import choiceParams from './choiceParams';
+import setFirstInstallment from './setFirstInstallment';
+import setMonthlyInstallment from './setMonthlyInstallment';
 
 export default combineReducers({
-  setProgram, choice,
+  setProgram, choiceParams, setFirstInstallment, setMonthlyInstallment,
 });
