@@ -19,11 +19,29 @@ export default (props) => {
     return 'месяцев';
   };
   return (
-    <div>
-      <h1>примерное время ожидания составит:</h1>
-      <span>{waitingTime()} {correctMohth()}</span>
-      <Link to="/" className="options optionsBtn"> Пересчитать</Link >
-      <button className="options optionsBtn">Сохранить в PDF</button>
+    <div className="content">
+      <section>
+        <h2>Примерное время ожидания составит:</h2>
+        <span>{waitingTime()} {correctMohth()}</span>
+      </section>
+      <section>
+        <h2>Рекомендации для уменьшения срока ожидания</h2>
+        <ul>
+          <li>Уменьшите срок займа;</li>
+          <li>Увеличьте первоначальный и ежемесячный взносы;</li>
+          <li>Участвуйте в специальных акциях для Пайщиков</li>
+        </ul>
+      </section>
+      <section>
+        <Link to="/" className="options optionsBtn">Перерасчет</Link >
+        <button
+          className="options optionsBtn"
+          onClick={() => {
+            window.print();
+          }}
+        >Сохранить в PDF
+        </button>
+      </section>
     </div>
   );
 };

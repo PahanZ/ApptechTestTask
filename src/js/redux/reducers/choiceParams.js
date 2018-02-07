@@ -1,6 +1,11 @@
 import { choiceParams, choiceStrategy } from '../constants';
 
-export default (state = {}, action) => {
+const initialState = {
+  summ: '100',
+  term: '1',
+};
+
+export default (state = initialState, action) => {
   if (action.type === choiceParams) {
     return {
       ...state,

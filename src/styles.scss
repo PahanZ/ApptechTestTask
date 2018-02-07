@@ -60,7 +60,6 @@
                 display: grid;
                 justify-content: center;
                 align-content: center;
-                font-size: x-large;
         }
         .aside {
             padding: 15px;
@@ -73,7 +72,7 @@
                 -moz-appearance: textfield;
             }
         }
-        .asidePage2 {
+        .asidePage2-3 {
             background-color: #c7c7c7;
             h2 {
                 font-size: 35px;
@@ -83,7 +82,28 @@
             }
         }
         .content {
-            font-size: x-large;
+            font-size: large;
+            display: grid;
+            justify-content: center;
+            align-content: space-evenly;
+            section {
+                text-align: center;
+            }
+            section:last-child {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                justify-items: center;                
+            }    
+            ul {
+                text-align: left;
+                line-height: 30px;
+                padding: 10px 0;
+            }
+            .page2content {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 10px;
+            }        
         }
     }
 }

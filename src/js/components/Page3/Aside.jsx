@@ -11,7 +11,7 @@ export default (props) => {
     </section>
   ));
   return (
-    <aside className="aside asidePage2">
+    <aside className="aside asidePage2-3">
       <section>
         <h2>Выбранная программа</h2>
         <h3>Новая программа по {correctProgram(props.program)}</h3>

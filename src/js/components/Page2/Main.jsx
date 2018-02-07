@@ -12,6 +12,8 @@ export default (props) => {
         monthlyInstallment={props.monthlyInstallment}
       />
       <Content data={props.data}
+        firstInstallment={props.firstInstallment}
+        monthlyInstallment={props.monthlyInstallment}
         setFirstInstallment={props.setFirstInstallment}
         setMonthlyInstallment={props.setMonthlyInstallment}
         choiceStrategy={props.choiceStrategy}
