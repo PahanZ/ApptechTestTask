@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-export default (props) => {
+const Aside = (props) => {
   const max = () => {
     if (props.program === 'Авто') {
-      return '60';
+      return 60;
     } else if (props.program === 'Недвижимость') {
-      return '120';
+      return 120;
     }
-    return '6';
+    return 6;
   };
   return (
     <aside className="aside">
@@ -29,18 +30,28 @@ export default (props) => {
         min="6"
         max={max()}
         placeholder="Срок займа, мес"
+        // pattern="\d [0-9]"
       />
       <Link
         to="/Page2"
         onClick={() => {
           const inputs = document.querySelectorAll('input.options');
-          props.choiceParams(inputs[0].value, inputs[1].value);
+          if (inputs[0].value && inputs[1].value !== '') {
+            props.choiceParams(inputs[0].value, inputs[1].value);
+          }
         }}
         className="options optionsBtn"
-        props={props}
       >Далее
       </Link>
     </aside>
   );
 };
+
+Aside.propTypes = {
+  setProgram: PropTypes.func.isRequired,
+  choiceParams: PropTypes.func.isRequired,
+};
+
+
+export default Aside;
 

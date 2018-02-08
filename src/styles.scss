@@ -1,4 +1,6 @@
-
+$turquoise: #0ed1d7;
+$white: #fff;
+$grey: #ddd;
 
 * {
     margin: 0;
@@ -16,7 +18,7 @@
         list-style-type: none;
         background-color: #c6c6c6;
         .item {
-            color: #fff;
+            color: $white;
             display: grid;
             grid-auto-flow: column;
             justify-content: space-around;
@@ -36,7 +38,7 @@
         }
     }
     .active {
-        background-color:#0ed1d7;
+        background-color: $turquoise;
     }
     .main {
         display: grid;
@@ -46,15 +48,15 @@
                 height: 10vh;
                 width: 65%;
                 border: none;
-                background-color: #ddd;
+                background-color: $grey;
                 padding: 0 10px;
                 font-size: large;
                 border-radius: 10px;
                 margin: 15px; 
             }
         .optionsBtn {
-                background-color:#0ed1d7;
-                color: #fff;
+                background-color: $turquoise;
+                color: $white;
                 cursor: pointer;
                 text-decoration: none;
                 display: grid;
@@ -69,11 +71,11 @@
                 -webkit-appearance: none;
             }
             .options[type='number'] {
-                -moz-appearance: textfield;
+                -webkit-appearance: textfield;
             }
         }
         .asidePage2-3 {
-            background-color: #c7c7c7;
+            background-color: $grey;
             h2 {
                 font-size: 35px;
             }
@@ -103,7 +105,31 @@
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 grid-gap: 10px;
-            }        
+            }
+            .saveToPDF {
+                background-color: #dd3d3d;
+            }
+            .inputRange {
+                -webkit-appearance: none;
+                height: 7px;
+                width: 100%;
+            }
+            .inputRange::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                background-image: url('../img/blueRange.png');
+                height: 30px;
+                width: 30px;
+                // margin-top: 25px;
+                }
+            .blueRange {
+                background-color: $turquoise;                
+            }    
+            .orangeRange {
+                background-color:#f48609;                
+            }
+            // .circle {
+
+            // }    
         }
     }
 }

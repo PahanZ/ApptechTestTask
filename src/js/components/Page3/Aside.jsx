@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import correctProgram from '../../additions/correctProgram';
 import data from '../../additions/dataForAside3';
 
-export default (props) => {
+const Aside = (props) => {
   // console.log(props);
   const section = data.h3.map((element, i) => (
     <section key={String(i)}>
@@ -40,3 +41,15 @@ export default (props) => {
   );
 };
 
+
+Aside.propTypes = {
+  data: PropTypes.shape({
+    summ: PropTypes.string,
+    term: PropTypes.string,
+    firstInstallment: PropTypes.string,
+    monthlyInstallment: PropTypes.string,
+  }).isRequired,
+  program: PropTypes.string.isRequired,
+};
+
+export default Aside;

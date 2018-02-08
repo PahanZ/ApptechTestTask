@@ -30,15 +30,22 @@ const development = {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', {
-            loader: 'postcss-loader',
-            options: {
-              plugins: [autoprefixer({
-                browsers: ['ie >= 8', 'last 4 version'],
-              }),
-              ],
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                minimize: true,
+              },
             },
-          }, 'sass-loader'],
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: [autoprefixer({
+                  browsers: ['ie >= 8', 'last 4 version'],
+                }),
+                ],
+              },
+            }, 'sass-loader'],
         }),
       },
       {

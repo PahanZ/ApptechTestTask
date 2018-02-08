@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-export default (props) => {
-  console.log(props);
+const Content = (props) => {
+  // console.log(props);
   const waitingTime = () => {
     const result = Math.ceil((120 / (((Number(props.data.firstInstallment)
       + (6 * Number(props.data.monthlyInstallment))) * 10000)
@@ -35,7 +36,7 @@ export default (props) => {
       <section>
         <Link to="/" className="options optionsBtn">Перерасчет</Link >
         <button
-          className="options optionsBtn"
+          className="options optionsBtn saveToPDF"
           onClick={() => {
             window.print();
           }}
@@ -45,3 +46,14 @@ export default (props) => {
     </div>
   );
 };
+
+Content.propTypes = {
+  data: PropTypes.shape({
+    summ: PropTypes.string,
+    term: PropTypes.string,
+    firstInstallment: PropTypes.string,
+    monthlyInstallment: PropTypes.string,
+  }).isRequired,
+};
+
+export default Content;
