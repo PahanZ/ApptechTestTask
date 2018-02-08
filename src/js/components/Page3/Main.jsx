@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Content from './Content';
 import Aside from './Aside';
 
@@ -19,6 +20,11 @@ const Main = (props) => {
   );
 };
 
+const mapStateToProps = state => ({
+  program: state.setProgram,
+  data: state.choiceParams,
+});
+
 Main.propTypes = {
   program: PropTypes.string.isRequired,
   data: PropTypes.shape({
@@ -26,4 +32,4 @@ Main.propTypes = {
   }).isRequired,
 };
 
-export default Main;
+export default (connect(mapStateToProps)(Main));

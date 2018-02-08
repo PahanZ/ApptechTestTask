@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Content from './Content';
 import Aside from './Aside';
+import { setFirstInstallment, setMonthlyInstallment, choiceStrategy } from '../../redux/actions';
 
 const Main = (props) => {
-  // console.log(props);
+  // console.log(props.location);
   return (
     <main className="main">
       <Aside
@@ -25,6 +27,19 @@ const Main = (props) => {
   );
 };
 
+const mapStateToProps = state => ({
+  program: state.setProgram,
+  data: state.choiceParams,
+  firstInstallment: state.setFirstInstallment,
+  monthlyInstallment: state.setMonthlyInstallment,
+});
+
+const mapDispatchToProps = {
+  setFirstInstallment,
+  setMonthlyInstallment,
+  choiceStrategy,
+};
+
 Main.propTypes = {
   data: PropTypes.shape({
     Entries: PropTypes.string,
@@ -37,5 +52,5 @@ Main.propTypes = {
   choiceStrategy: PropTypes.func.isRequired,
 };
 
-export default Main;
+export default (connect(mapStateToProps, mapDispatchToProps)(Main));
 
