@@ -11,13 +11,14 @@ const development = {
   entry: './src/js/index.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
     filename: 'js/bundle.js',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
   },
   devServer: {
-    // historyApiFallback: true,
+    historyApiFallback: true,
   },
   module: {
     rules: [
