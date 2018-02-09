@@ -6,5 +6,5 @@ import setFirstInstallment from './setFirstInstallment';
 import setMonthlyInstallment from './setMonthlyInstallment';
 
 export default combineReducers({
-  setProgram, choiceParams, setFirstInstallment, setMonthlyInstallment, router: routerReducer,
+  setProgram, choiceParams, setFirstInstallment, setMonthlyInstallment, routing: routerReducer,
 });
