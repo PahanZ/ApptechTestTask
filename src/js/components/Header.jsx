@@ -6,7 +6,7 @@ const img2 = require('../../img/2.png');
 const img3 = require('../../img/3.png');
 
 export default (props) => {
-  console.log(props);
+  // console.log(props);
   return (
   <header>
     <ul className="menu">

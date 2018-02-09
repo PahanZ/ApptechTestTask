@@ -6,7 +6,7 @@ import Aside from './Aside';
 import { setProgram, choiceParams } from '../../redux/actions';
 
 const Main = props => {
-  console.log(props.location.pathname);
+  // console.log(props.location.pathname);
   return (
   <main className="main">
     <Aside
