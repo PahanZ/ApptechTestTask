@@ -21,9 +21,12 @@ const Content = (props) => {
   };
   return (
     <div className="content">
-      <section>
+      <section className="sectionResult">
         <h2>Примерное время ожидания составит:</h2>
-        <span>{waitingTime()} {correctMohth()}</span>
+        <div className="result">
+          <span className="digit">{waitingTime()}</span>
+          <span>{correctMohth()}</span>
+        </div>
       </section>
       <section>
         <h2>Рекомендации для уменьшения срока ожидания</h2>

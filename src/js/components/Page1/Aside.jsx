@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const Aside = (props) => {
-  const max = () => {
-    if (props.program === 'Авто') {
-      return 60;
-    } else if (props.program === 'Недвижимость') {
-      return 120;
+  const max = (event) => {
+    const input = event;
+    if (props.program === 'Авто' && event.currentTarget.value > 60) {
+      input.currentTarget.value = 60;
+    } else if (props.program === 'Недвижимость' && event.currentTarget.value > 120) {
+      input.currentTarget.value = 120;
     }
-    return 6;
   };
   return (
     <aside className="aside">
@@ -27,10 +27,8 @@ const Aside = (props) => {
       <input
         className="options"
         type="number"
-        min="6"
-        max={max()}
+        onChange={max}
         placeholder="Срок займа, мес"
-        // pattern="\d [0-9]"
       />
       <Link
         to="/Page2"
@@ -48,10 +46,10 @@ const Aside = (props) => {
 };
 
 Aside.propTypes = {
+  program: PropTypes.string.isRequired,
   setProgram: PropTypes.func.isRequired,
   choiceParams: PropTypes.func.isRequired,
 };
-
 
 export default Aside;
 

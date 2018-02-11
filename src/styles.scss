@@ -85,7 +85,7 @@ $redRange: require('./img/redRange.png');
                 margin: 10px 0;
             }
         }
-        .content {
+        .content {            
             font-size: large;
             display: grid;
             justify-content: center;
@@ -135,10 +135,24 @@ $redRange: require('./img/redRange.png');
                 height: 30px;
                 width: 40px;
                 margin-top: 40px;
-            }  
-            // .circle {
-
-            // }    
+            }
+            .result {
+                height: 250px;
+                border: 5px solid $turquoise;
+                border-radius: 50%;
+                width: 45%;
+                display: grid;
+                align-content: baseline;
+                color: $turquoise;
+                .digit {
+                    font-size: 150px;
+                }
+            } 
+            .sectionResult {
+                display: grid;
+                justify-items: center;
+                grid-gap: 20px;
+            }
         }
     }
 }

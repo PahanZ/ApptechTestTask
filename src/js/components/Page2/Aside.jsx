@@ -18,10 +18,10 @@ const Aside = (props) => {
       <section>
         <h2>Выбранная стратегия</h2>
         <h3>Первоначальный взнос -
-          <span className="strategy">{props.firstInstallment}</span> руб.
+          <span className="strategy"> {props.firstInstallment}</span> руб.
         </h3>
         <h3>Ежемесячный взнос -
-          <span className="strategy">{props.monthlyInstallment}</span> руб.
+          <span className="strategy"> {props.monthlyInstallment}</span> руб.
         </h3>
       </section>
     </aside>
