@@ -41,7 +41,6 @@ const Aside = (props) => {
   );
 };
 
-
 Aside.propTypes = {
   data: PropTypes.shape({
     summ: PropTypes.string,

@@ -1,14 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import CircularProgressbar from 'react-circular-progressbar';
 
 const Content = (props) => {
-  // console.log(props);
+  const correct = prop => Math.round((prop / props.data.summ) * 100);
   return (
     <div className="content">
       <section className="page2content">
-        <div className="circle" />
-        <div className="circle" />
+        <CircularProgressbar
+          className="CircularProgressbar-turquoise"
+          percentage={correct(props.firstInstallment)}
+        />
+        <CircularProgressbar
+          className="CircularProgressbar-orange"
+          percentage={correct(props.monthlyInstallment)}
+        />
       </section>
       <section className="page2content">
         <div>
@@ -30,8 +37,9 @@ const Content = (props) => {
             max={props.data.summ}
             step={10}
             onChange={(event) => {
-              props.setFirstInstallment(event.currentTarget.value);
-            }}
+                props.setFirstInstallment(event.currentTarget.value);
+                correct();
+              }}
           />
         </div>
         <div>
@@ -48,7 +56,7 @@ const Content = (props) => {
           />
         </div>
       </section>
-      <section>
+      <section className="page2content">
         <Link to="/" className="options optionsBtn"> Перерасчет </Link>
         <Link
           to="/Page3"

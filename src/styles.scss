@@ -1,8 +1,9 @@
-$turquoise: #0ed1d7;
+$turquoise: #3cc4d0;
 $white: #fff;
-$grey: #ddd;
+$grey: #ecf0f9;
 $blueRange: require('./img/blueRange.png');
 $redRange: require('./img/redRange.png');
+$orange: #f48609;
 
 * {
     margin: 0;
@@ -18,7 +19,7 @@ $redRange: require('./img/redRange.png');
         display: grid;
         grid-auto-flow: column;
         list-style-type: none;
-        background-color: #c6c6c6;
+        background-color: $grey;
         .item {
             color: $white;
             display: grid;
@@ -47,7 +48,7 @@ $redRange: require('./img/redRange.png');
         grid-auto-flow: column;
         grid-template-columns: 1.55fr 3fr;
         .options {
-                height: 10vh;
+                height: 50px;
                 width: 65%;
                 border: none;
                 background-color: $grey;
@@ -57,13 +58,17 @@ $redRange: require('./img/redRange.png');
                 margin: 15px; 
             }
         .optionsBtn {
-                background-color: $turquoise;
-                color: $white;
+                background-color: $grey;
+                color: #4f4f4f;
                 cursor: pointer;
                 text-decoration: none;
                 display: grid;
                 justify-content: center;
                 align-content: center;
+                transition: .3s;
+        }
+        .optionsBtn:hover {
+            background-color: $turquoise;
         }
         .aside {
             padding: 15px;
@@ -115,12 +120,13 @@ $redRange: require('./img/redRange.png');
                 -webkit-appearance: none;
                 height: 7px;
                 width: 100%;
+                margin-bottom: 25px;
             }
             .blueRange {
                 background-color: $turquoise;                
             }  
             .orangeRange {
-                background-color:#f48609;                
+                background-color: $orange;                
             }
             .blueRange::-webkit-slider-thumb {
                 -webkit-appearance: none;
@@ -137,10 +143,10 @@ $redRange: require('./img/redRange.png');
                 margin-top: 40px;
             }
             .result {
-                height: 250px;
+                height: 240px;
                 border: 5px solid $turquoise;
                 border-radius: 50%;
-                width: 45%;
+                width: 40%;
                 display: grid;
                 align-content: baseline;
                 color: $turquoise;
@@ -153,7 +159,32 @@ $redRange: require('./img/redRange.png');
                 justify-items: center;
                 grid-gap: 20px;
             }
+            .CircularProgressbar {
+                width: 100%;
+            }
+            .CircularProgressbar .CircularProgressbar-path {
+                stroke-linecap: round;
+                transition: stroke-dashoffset 0.5s ease 0s;
+            }
+            .CircularProgressbar .CircularProgressbar-trail {
+                stroke: #d6d6d6;
+            }
+            .CircularProgressbar .CircularProgressbar-text {
+                font-size: 20px;
+                dominant-baseline: middle;
+                text-anchor: middle;
+            }
+            .CircularProgressbar-turquoise{
+                stroke: $turquoise;
+                fill: $turquoise;
+            }
+            .CircularProgressbar-orange{
+                stroke: $orange;
+                fill: $orange;
+            }
+            .CircularProgressbar.CircularProgressbar-inverted .CircularProgressbar-text {
+                fill: #fff;
+            }                 
         }
     }
 }
-
