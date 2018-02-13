@@ -4,21 +4,18 @@ import { connect } from 'react-redux';
 import Content from './Content';
 import Aside from './Aside';
 
-const Main = (props) => {
-  // console.log(props);
-  return (
-    <main className="main">
-      <Aside
-        program={props.program}
-        data={props.data}
-      />
-      <Content
-        program={props.program}
-        data={props.data}
-      />
-    </main>
-  );
-};
+const Main = props => (
+  <main className="main">
+    <Aside
+      program={props.program}
+      data={props.data}
+    />
+    <Content
+      program={props.program}
+      data={props.data}
+    />
+  </main>
+);
 
 const mapStateToProps = state => ({
   program: state.setProgram,

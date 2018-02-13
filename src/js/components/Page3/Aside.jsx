@@ -4,7 +4,6 @@ import correctProgram from '../../additions/correctProgram';
 import data from '../../additions/dataForAside3';
 
 const Aside = (props) => {
-  // console.log(props);
   const section = data.h3.map((element, i) => (
     <section key={String(i)}>
       <h3>{element}</h3>

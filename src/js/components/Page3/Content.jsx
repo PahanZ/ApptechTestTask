@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const Content = (props) => {
-  // console.log(props);
   const waitingTime = () => {
     const result = Math.ceil((120 / (((Number(props.data.firstInstallment)
       + (6 * Number(props.data.monthlyInstallment))) * 10000)
